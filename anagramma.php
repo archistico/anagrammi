@@ -19,10 +19,10 @@ function contiene($a, $p) {
 }
 
 echo "-----ANAGRAMMI-----\n";
-$fp = fopen('data.txt', 'w');
+$nome = $argv[2];
+$fp = fopen($nome.'.txt', 'w');
 $risultati = [];
 
-$nome = $argv[2];
 $lunghezza = strlen($nome);
 $lettere = [];
 
@@ -54,4 +54,4 @@ for($i = 0; $i<count($risultati); $i++) {
 }
 
 fclose($fp);
-echo "File write data.txt";
+echo "File write $nome.txt";
