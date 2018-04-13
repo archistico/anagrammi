@@ -30,6 +30,8 @@ $risultati = [];
 $lunghezza = strlen($nome);
 $lettere = [];
 
+echo "Massimo numero anagrammi: ".fattoriale($lunghezza)."\n";
+
 if(fattoriale($lunghezza) < $argv[1]) {
    echo "Le permutazioni sono minori del numero scelto";
    die();
