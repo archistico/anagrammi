@@ -18,6 +18,10 @@ function contiene($a, $p) {
    return false;
 }
 
+function fattoriale($n){
+   return $n > 1 ? $n * fattoriale($n - 1) : 1;
+};
+
 echo "-----ANAGRAMMI-----\n";
 $nome = $argv[2];
 $fp = fopen($nome.'.txt', 'w');
@@ -26,11 +30,16 @@ $risultati = [];
 $lunghezza = strlen($nome);
 $lettere = [];
 
+if(fattoriale($lunghezza) < $argv[1]) {
+   echo "Le permutazioni sono minori del numero scelto";
+   die();
+}
+
 for($i = 0; $i<$lunghezza; $i++) {
    $lettere[] = $nome[$i];
 }
 
-for($c = 0; $c < $argv[1]; $c++) {
+while(count($risultati) < $argv[1]) {
    // Tiro ad indovinare la lettera fino a quando le ho usate tutte
    $t = $lettere;
    $anagramma = [];
