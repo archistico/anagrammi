@@ -57,7 +57,7 @@ while(count($risultati) < $argv[1]) {
    }
 }
 
-
+sort($risultati);
 for($i = 0; $i<count($risultati); $i++) {
    fwrite($fp, "$risultati[$i]\n");
 }
